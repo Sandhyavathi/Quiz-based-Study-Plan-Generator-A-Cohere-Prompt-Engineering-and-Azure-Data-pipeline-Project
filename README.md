@@ -1,6 +1,6 @@
 # Quiz-Based Study Plan Generator
 
-An **adaptive learning system** using **Generative AI**, designed for graduate and postgraduate students. This application generates personalized study plans based on quiz performance, helping students improve in areas where they struggle.
+An **adaptive learning system** using **Cohere**, designed for students. This application generates personalized study plans based on quiz performance, helping students improve in areas where they struggle.
 
 ---
 
