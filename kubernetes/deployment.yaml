@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: study-plans
+  labels:
+    app: study-plans
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: study-plans
+  template:
+    metadata:
+      labels:
+        app: study-plans
+    spec:
+      containers:
+      - name: study-plans
+        image: sandhya006/study-plans:latest  # Reference your Docker Hub image
+        ports:
+        - containerPort: 80  # Matches the exposed port in your Docker container
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quiz-app-service  # Name of the service
+spec:
+  type: LoadBalancer  # Ensures external accessibility
+  selector:
+    app: study-plans  # Matches the label in the Deployment
+  ports:
+    - protocol: TCP
+      port: 80         # Port on the service
+      targetPort: 80   # Port exposed by the container
+
