@@ -30,7 +30,7 @@ st.header("Take the Quiz")
 if st.session_state.quiz_data:
     for question in st.session_state.quiz_data:
         question_id = question["id"]
-        st.subheader(f"Q{question_id}: {question['question']}")
+        st.subheader(f"Q: {question['question']}")
         selected_option = st.radio(
             "Choose your answer:",
             options=enumerate(question["options"], 1),
